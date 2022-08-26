@@ -14,7 +14,8 @@ class photographerFactory {
 
         const picture = `assets/photographers/${data.portrait}`;
         const article = document.createElement('article');
-        const img = document.createElement('img');
+        const cardLink = document.createElement('a');
+
         img.setAttribute("src", picture);
         const h2 = document.createElement('h2');
         h2.textContent = data.name;

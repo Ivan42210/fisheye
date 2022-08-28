@@ -5,23 +5,26 @@ class photographerFactory {
         this.country = data.country;
         this.tagline = data.tagline;
         this.price = data.price;
-        this.portrait = data.portrait;
+        this.portrait = `assets/photographers/${data.portrait}`;
+        this.link = `photographer.html?id=${data.id}`
     }
 
 
     getUserCardDOM() {
 
 
-        const picture = `assets/photographers/${data.portrait}`;
-        const article = document.createElement('article');
-        const cardLink = document.createElement('a');
+        const article = document.createElement('article')
+        article.className = 'photographer__card'
+        const a = new Link(this.link, article).makeLink()
+        new image(this.portrait, '', a).MakeImage()
+        new textElement('h2', this.name, a).MakeElement()
+        const p = new textElement('p', '', article).MakeElement()
+        new textElement('span', this.city, p).MakeElement()
+        new textElement('span', this.tagline, p).MakeElement();
+        new textElement('span', this.price + '€/jour', p).MakeElement();
 
-        img.setAttribute("src", picture);
-        const h2 = document.createElement('h2');
-        h2.textContent = data.name;
-        article.appendChild(img);
-        article.appendChild(h2);
-        return (article);
+        return article
+
     }
 
 }

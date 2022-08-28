@@ -40,4 +40,14 @@ class photoFactory {
         }
     }
 
+    get url() {
+        if (this._image) {
+            return `assets/photos/${this._photographerId}/${this._image}`
+        } else if (this._video) {
+            return `assets/photos/${this._photographerId}/${this._video}`
+        } else {
+            return 'assets/photographers/account.png'
+        }
+    }
+
 }

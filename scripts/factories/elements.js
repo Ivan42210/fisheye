@@ -27,7 +27,11 @@ class textElement {
         const $element = document.createElement(this.type)
         $element.textContent = this.content
         this.parent.appendChild($element)
+
+
         return $element
+
+
     }
 
 }

@@ -14,7 +14,8 @@ class Api {
                 throw new Error("Erreur dans le chemin", err);
             })
     }
-}
+
+};
 
 class photographerDatas extends Api {
     async getPhotographers() {
@@ -22,5 +23,3 @@ class photographerDatas extends Api {
         return data.photographers
     }
 }
-
-export { photographerDatas }

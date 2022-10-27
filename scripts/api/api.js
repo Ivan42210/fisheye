@@ -19,7 +19,12 @@ class Api {
 
 class photographerDatas extends Api {
     async getPhotographers() {
-        const data = await this.getData()
+        const data = await this.getData();
         return data.photographers
+    }
+
+    async getPhotos() {
+        const data = await this.getData();
+        return data.media
     }
 }

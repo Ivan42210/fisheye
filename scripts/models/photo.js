@@ -1,4 +1,4 @@
-class photoFactory {
+class Photo {
     constructor(data) {
         this._id = data.id
         this._photographerId = data.photographerId

@@ -1,37 +1,91 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="css/photographer.css">
     <meta charset="utf-8">
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
     <title>Fisheye - photographe </title>
-  </head>
-  <body>
+</head>
+
+<body>
     <header>
-      <img src="assets/images/logo.png" class="logo" />
+        <img src="assets/images/logo.png" class="logo" />
     </header>
     <main id="main">
-      <div class="photograph-header">
-        <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
-      </div>
+        <div class="photograph-header">
+            <button id="contact_photographer" class="contact_button" onclick="displayModal()">Contactez-moi</button>
+        </div>
     </main>
     <div id="contact_modal">
-			<div class="modal">
-				<header>
-          <h2>Contactez-moi</h2>
-          <img src="assets/icons/close.svg" onclick="closeModal()" />
-        </header>
-				<form>
-					<div>
-						<label>Prénom</label>
-						<input />
-					</div>
-          <button class="contact_button">Envoyer</button>
-				</form>
-			</div>
-		</div>
+        <div class="modal">
+            <header>
+                <h2>Contactez-moi</h2>
+                <img src="assets/icons/close.svg" class="close_modal" onclick="closeModal()" />
+            </header>
+            <form>
+                <div>
+                    <label>Nom</label>
+                    <input id="last-name" type="text" />
+                </div>
+                <div>
+                    <label>Prénom</label>
+                    <input id="first-name" type="text" />
+                </div>
+                <div>
+                    <label>Adresse e-mail</label>
+                    <input id="email" type="email" />
+                </div>
+
+                <button class="submit_button">Envoyer</button>
+            </form>
+        </div>
+    </div>
+    <div aria-label="filter" id="selector__section">
+        <span>Trier par: </span>
+        <ul class="selector">
+            <li id="selected-area" class="selected__section"><input id="radio" class="selected" type="radio" name="selected-item" value="">
+                <label for="selected-item" id="selected-label">Aucun</label><i class="fa-solid fa-angle-down close-selector"></i></li>
+            <ul id="subMenu" class="option display--none">
+                <li><input class="selector__item" type="button" name="Popularité" id="popularity" data-value="popularity" value="Popularité"></li>
+                <li><input class="selector__item" type="button" name="Date" id="date" data-value="date" value="Date"></li>
+                <li><input class="selector__item" type="button" name="Titre" id="title" data-value="title" value="Titre"></li>
+            </ul>
+        </ul>
+    </div>
+    <div class="photograph_section-pics">
+
+    </div>
+    <section id="lightbox" class="lightbox__section">
+
+        <div class="lightbox">
+            <button id="close" class="close-lightbox" onclick="closeLightbox()"><i class="fa-solid fa-xmark"></i></button>
+            <button id="left-arrow" class="left-arrow"><i class="fa-solid fa-angle-left"></i></button>
+            <button id="right-arrow" class="right-arrow"><i class="fa-solid fa-angle-right"></i></button>
+            <div class="lightbox__container">
+
+            </div>
+        </div>
+
+    </section>
+    <section id="pricing" class="pricingLikes__section">
+        <span class="photo-total-likes"></span><span class="pricing__section"></span>
+    </section>
+    <script src="/scripts/api/api.js"></script>
+    <script src="/scripts/models/photo.js"></script>
+    <script src="/scripts/factories/elements.js"></script>
+    <script src="/scripts/factories/photographer.js"></script>
+    <script src="/scripts/utils/likes.js"></script>
+    <script src="/scripts/factories/photos.js"></script>
     <script src="/scripts/pages/photographer.js"></script>
+
     <script src="/scripts/utils/contactForm.js"></script>
-  </body>
+    <script src="/scripts/utils/myLightbox.js"></script>
+
+    <script src="/scripts/utils/sortBy.js"></script>
+    <script src="https://kit.fontawesome.com/b00e3f61b3.js" crossorigin="anonymous"></script>
+</body>
+
 </html>

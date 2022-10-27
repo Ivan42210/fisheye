@@ -49,3 +49,22 @@ class Link {
         return $a
     }
 }
+
+class Video {
+    constructor(src, parent) {
+        this.src = src
+        this.parent = parent
+    }
+
+    makeVideo() {
+        const $extension = this.src.split('.')[1];
+        const $video = document.createElement('video');
+        const $source = document.createElement('source');
+        $video.appendChild($source);
+        $source.setAttribute('src', this.src)
+        $source.setAttribute('type', 'video/' + $extension);
+        this.parent.appendChild($video);
+
+        return $video
+    }
+}

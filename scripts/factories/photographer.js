@@ -19,12 +19,34 @@ class photographerFactory {
         new image(this.portrait, '', a).MakeImage()
         new textElement('h2', this.name, a).MakeElement()
         const p = new textElement('p', '', article).MakeElement()
-        new textElement('span', this.city, p).MakeElement()
+        const cityCountry = new textElement('div', '', p).MakeElement()
+        cityCountry.className = 'location'
+        new textElement('span', this.city + ", ", cityCountry).MakeElement()
+        new textElement('span', this.country, cityCountry).MakeElement()
         new textElement('span', this.tagline, p).MakeElement();
         new textElement('span', this.price + '€/jour', p).MakeElement();
 
         return article
 
+    }
+
+    getHeader() {
+        const header = document.querySelector('.photograph-header');
+        const article = document.createElement('article');
+        article.className = 'photographer_header-info';
+        header.appendChild(article);
+        const button = document.getElementById('contact_photographer');
+        console.log(article);
+        article.parentElement.appendChild(button);
+        new textElement('h2', this.name, article).MakeElement();
+        new textElement('span', this.tagline, article).MakeElement();
+        const headerImage = new image(this.portrait, '', header).MakeImage();
+        headerImage.className = 'header_image';
+        const infos = document.querySelector('.pricing__section');
+        infos.innerHTML = this.price + '€ / jour';
+
+
+        return article
     }
 
 }

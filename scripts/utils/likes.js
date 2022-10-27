@@ -9,6 +9,7 @@ class likesCounter {
 
     displayLikes() {
         this.userTotalPhotosLikes = this.userLikes + this.photosLikes;
+        console.log('likes update: ' + this.photoTotalLike)
         this.totalLikesSection.innerHTML = this.userTotalPhotosLikes + '<i class="fa-solid fa-heart"  aria-label="likes"></i>';
 
     }
@@ -18,7 +19,6 @@ class likesCounter {
             this.photosLikes += photo.likes
         })
         this.displayLikes()
-        console.log('Total likes:' + this.userTotalPhotosLikes)
     }
 
     updateLikes(action) {

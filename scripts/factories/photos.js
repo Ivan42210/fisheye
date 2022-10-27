@@ -36,6 +36,7 @@ class photosFactory {
                 const newLikes = that.likes + 1
                 this.innerHTML = newLikes + ' <i class="fa-solid fa-heart" aria-label="likes"></i>'
                 that.counter.updateLikes('like')
+
             }
         })
     }

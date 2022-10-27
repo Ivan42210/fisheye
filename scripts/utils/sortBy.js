@@ -27,9 +27,16 @@ async function sortByButton(e) {
     const labelSelected = document.getElementById('selected-label');
     Input1.dataset.value = e.target.dataset.value;
     labelSelected.innerHTML = e.target.getAttribute('value');
-
     sortBy()
+    changeBtn()
 }
+
+function changeBtn() {
+    if (Input2.dataset.value === Input1.dataset.value) {
+        Input2.classList.add('display--none')
+    }
+}
+
 
 
 

@@ -31,12 +31,14 @@ class photosFactory {
                 this.classList.remove('liked')
                 this.innerHTML = that.likes + ' <i class="fa-solid fa-heart" aria-label="likes"></i>'
                 that.counter.updateLikes('dislike')
+                console.log('update likes: ' + that.counter)
             } else {
                 this.classList.add('liked')
                 const newLikes = that.likes + 1
                 this.innerHTML = newLikes + ' <i class="fa-solid fa-heart" aria-label="likes"></i>'
-                that.counter.updateLikes('like')
 
+                that.counter.updateLikes('like')
+                console.log('update likes: ' + that.counter)
             }
         })
     }

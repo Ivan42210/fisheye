@@ -10,11 +10,11 @@
     <title>Fisheye - photographe </title>
 </head>
 
-<body>
+<body id="main">
     <header>
         <img src="assets/images/logo.png" class="logo" />
     </header>
-    <main id="main">
+    <main>
         <div class="photograph-header">
             <button id="contact_photographer" class="contact_button" onclick="displayModal()">Contactez-moi</button>
         </div>
@@ -47,7 +47,7 @@
         <span>Trier par: </span>
         <ul class="selector">
             <li id="selected-area" class="selected__section"><input id="radio" class="selected" type="radio" name="selected-item" value="">
-                <label for="selected-item" id="selected-label">Aucun</label><i class="fa-solid fa-angle-down close-selector"></i></li>
+                <label for="selected-item" id="selected-label">Sélection</label><i class="fa-solid fa-angle-down close-selector"></i></li>
             <ul id="subMenu" class="option display--none">
                 <li><input class="selector__item" type="button" name="Popularité" id="popularity" data-value="popularity" value="Popularité"></li>
                 <li><input class="selector__item" type="button" name="Date" id="date" data-value="date" value="Date"></li>
@@ -60,10 +60,11 @@
     </div>
     <section id="lightbox" class="lightbox__section">
 
-        <div class="lightbox">
-            <button id="close" class="close-lightbox" onclick="closeLightbox()"><i class="fa-solid fa-xmark"></i></button>
+        <div class="lightbox" aria-label="lightbox">
+
             <button id="left-arrow" class="left-arrow"><i class="fa-solid fa-angle-left"></i></button>
             <button id="right-arrow" class="right-arrow"><i class="fa-solid fa-angle-right"></i></button>
+            <button id="close" class="close-lightbox" onclick="closeLightbox()"><i class="fa-solid fa-xmark"></i></button>
             <div class="lightbox__container">
 
             </div>
@@ -77,10 +78,10 @@
     <script src="/scripts/models/photo.js"></script>
     <script src="/scripts/factories/elements.js"></script>
     <script src="/scripts/factories/photographer.js"></script>
-    <script src="/scripts/utils/likes.js"></script>
+
     <script src="/scripts/factories/photos.js"></script>
     <script src="/scripts/pages/photographer.js"></script>
-
+    <script src="/scripts/utils/likes.js"></script>
     <script src="/scripts/utils/contactForm.js"></script>
     <script src="/scripts/utils/myLightbox.js"></script>
 

@@ -9,7 +9,6 @@ class likesCounter {
 
     displayLikes() {
         this.userTotalPhotosLikes = this.userLikes + this.photosLikes;
-        console.log('likes update: ' + this.photoTotalLike)
         this.totalLikesSection.innerHTML = this.userTotalPhotosLikes + '<i class="fa-solid fa-heart"  aria-label="likes"></i>';
 
     }
@@ -23,13 +22,15 @@ class likesCounter {
 
     updateLikes(action) {
         if (action === 'like') {
-            this.userlikes++;
-            this.displayLikes();
-            console.log('Update total likes (like):' + this.photoTotalLike)
+            this.userLikes++
+                console.log('users 2: ' + this.userLikes)
+            this.displayLikes()
+                //console.log('Update total likes (like):' + this.photoTotalLike)
         } else if (action === 'dislike') {
             this.userLikes--;
+            console.log('userDislike: ' + this.userLikes)
             this.displayLikes();
-            console.log('Update total likes (dislike):' + this.photoTotalLike)
+            //console.log('Update total likes (dislike):' + this.photoTotalLike)
         }
 
 

@@ -4,6 +4,7 @@ const selectorOptions = document.getElementById('subMenu');
 const closeSelectorButton = document.querySelector('.close-selector');
 Input1.addEventListener('click', openSelector);
 Input2.forEach((btn) => {
+
     btn.addEventListener('click', sortByButton);
 });
 
@@ -28,13 +29,21 @@ async function sortByButton(e) {
     Input1.dataset.value = e.target.dataset.value;
     labelSelected.innerHTML = e.target.getAttribute('value');
     sortBy()
-    changeBtn()
+    changeBtn(e)
 }
 
-function changeBtn() {
-    if (Input2.dataset.value === Input1.dataset.value) {
-        Input2.classList.add('display--none')
+function changeBtn(e) {
+    console.log(e.target)
+    Input2.forEach((btn) => {
+
+        btn.classList.remove('display--none');
+    });
+
+    if (Input1.dataset.value === e.target.dataset.value) {
+
+        e.target.classList.add('display--none')
     }
+
 }
 
 

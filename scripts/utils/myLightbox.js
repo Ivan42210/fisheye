@@ -2,8 +2,11 @@ let lastImage = ''
 let click = 0
 
 
+
 function displayLightbox(idPhoto) {
+
     const modal = document.getElementById('lightbox');
+    const subModal = document.querySelector('.lightbox')
     const main = document.getElementById('main')
     console.log("l'element:" + main)
     const imgContainer = document.querySelector('.lightbox__container');
@@ -40,14 +43,15 @@ function displayLightbox(idPhoto) {
 
     setupArrowLightbox(lightboxPhotoData);
 
-    modal.setAttribute('aria-hidden', 'false')
+    subModal.setAttribute('aria-hidden', 'false')
     main.setAttribute('aria-hidden', 'true')
+
 }
 
 function setupArrowLightbox(photoData) {
-    const modal = document.getElementById('lightbox');
-    const leftArrow = document.getElementById('left-arrow');
-    const rightArrow = document.getElementById('right-arrow');
+    const subModal = document.querySelector('.lightbox')
+    const arrowLeft = document.getElementById('left-arrow');
+    const arrowRight = document.getElementById('right-arrow');
     const imgPosition = allPhotos.indexOf(photoData);
     const imgPositionMax = allPhotos.length;
     const imgLeft = imgPosition - 1;
@@ -55,19 +59,19 @@ function setupArrowLightbox(photoData) {
 
     if (imgLeft >= 0) {
         console.log('Left:' + allPhotos[imgLeft].id)
-        leftArrow.setAttribute('onclick', 'displayLightbox(' + allPhotos[imgLeft].id + ')')
-        leftArrow.style.display = 'block'
+        arrowLeft.setAttribute('onclick', 'displayLightbox(' + allPhotos[imgLeft].id + ')')
+        arrowLeft.style.display = 'block'
     } else {
-        leftArrow.style.display = 'none'
+        arrowLeft.style.display = 'none'
     }
 
     if (imgRight < imgPositionMax) {
         console.log('Right:' + allPhotos[imgRight].id)
-        rightArrow.setAttribute('onclick', 'displayLightbox(' + allPhotos[imgRight].id + ')')
-        rightArrow.style.display = 'block'
+        arrowRight.setAttribute('onclick', 'displayLightbox(' + allPhotos[imgRight].id + ')')
+        arrowRight.style.display = 'block'
             // Image de droite lorsque l'icone droite est pressé.
     } else {
-        rightArrow.style.display = 'none'
+        arrowRight.style.display = 'none'
     }
 
     window.addEventListener('keyup', e => {
@@ -76,25 +80,26 @@ function setupArrowLightbox(photoData) {
         }
         if (click > 0) {
             return
-        } else if (modal.getAttribute('aria-hidden') === 'false' && e.key === 'leftArrow' && (imgLeft >= 0)) {
+        } else if (subModal.getAttribute('aria-hidden') === 'false' && e.key === 'ArrowLeft' && (imgLeft >= 0)) {
 
-            leftArrow.focus()
-            leftArrow.click()
+            arrowLeft.focus()
+            arrowLeft.click()
             click++
-        } else if (modal.getAttribute('aria-hidden') === 'false' && e.key === 'rightArrow' && (imgRight < imgPositionMax)) {
+        } else if (subModal.getAttribute('aria-hidden') === 'false' && e.key === 'ArrowRight' && (imgRight < imgPositionMax)) {
 
-            rightArrow.focus()
-            rightArrow.click()
-            console.log('1' + rightArrow)
-            console.log('2' + imgRight)
-            console.log('3' + imgPositionMax)
+            arrowRight.focus()
+            arrowRight.click()
+
             click++
-        } else if (modal.getAttribute('aria-hidden') === 'false' && e.key === 'Escape') {
+        } else if (subModal.getAttribute('aria-hidden') === 'false' && e.key === 'Escape') {
             closeLightbox()
             click++
         }
         setTimeout(function() { click = 0 }, 100)
     })
+    console.log('1' + arrowRight)
+    console.log('2' + imgRight)
+    console.log('3' + imgPositionMax)
 }
 
 //fermeture de la lightbox

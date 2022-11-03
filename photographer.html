@@ -19,7 +19,7 @@
             <button id="contact_photographer" class="contact_button" onclick="displayModal()">Contactez-moi</button>
         </div>
     </main>
-    <div id="contact_modal">
+    <div id="contact_modal" class="modal_window">
         <div class="modal">
             <header>
                 <h2>Contactez-moi</h2>
@@ -38,8 +38,12 @@
                     <label>Adresse e-mail</label>
                     <input id="email" type="email" />
                 </div>
+                <div>
+                    <label for="message">Votre message</label>
+                    <textarea name="message" id="yout-message" cols="30" rows="10"></textarea>
+                </div>
 
-                <button class="submit_button">Envoyer</button>
+                <button class="submit_button contact_button">Envoyer</button>
             </form>
         </div>
     </div>

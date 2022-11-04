@@ -1,6 +1,8 @@
 //Mettre le code JavaScript lié à la page photographer.html
 let allPhotos = [];
 
+
+
 class photographerPage {
     constructor() {
         this.params = (new URL(document.location)).searchParams

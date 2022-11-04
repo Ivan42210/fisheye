@@ -44,9 +44,12 @@ class photographerFactory {
         headerImage.className = 'header_image';
         const infos = document.querySelector('.pricing__section');
         infos.innerHTML = this.price + '€ / jour';
-
+        const formTitle = document.querySelector('.photographer__form');
+        formTitle.innerHTML = this.name;
 
         return article
     }
+
+
 
 }

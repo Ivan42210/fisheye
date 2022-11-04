@@ -4,6 +4,7 @@ class Form {
         this.main = document.getElementById('main')
         this.buttonOpen = document.getElementById('contact_photographer')
         this.buttonClose = document.querySelector('.close_modal')
+        this.nameTitle = document.querySelector('.photographer__form')
         this.buttonSend = document.querySelector('.submit_button')
         this.textControl = document.querySelectorAll('.text-control')
         this.form = document.querySelector('.modal_form')
@@ -17,7 +18,7 @@ class Form {
     displayModal() {
         this.modal.style.display = 'flex'
         this.modal.setAttribute('aria-hidden', 'false')
-        this.main.setAttribute('aria-hidden', 'true')
+            //this.main.setAttribute('aria-hidden', 'true')
         document.body.classList.add('no-scroll')
         this.buttonClose.focus()
     }
@@ -25,7 +26,7 @@ class Form {
     closeModal() {
         this.modal.style.display = 'none'
         this.modal.setAttribute('aria-hidden', 'true')
-        this.main.setAttribute('aria-hidden', 'false')
+            //this.main.setAttribute('aria-hidden', 'false')
         document.body.classList.remove('no-scroll')
         this.buttonOpen.focus()
     }

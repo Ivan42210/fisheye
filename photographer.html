@@ -10,41 +10,44 @@
     <title>Fisheye - photographe </title>
 </head>
 
-<body id="main">
+<body>
     <header>
         <img src="assets/images/logo.png" class="logo" />
     </header>
     <main>
         <div class="photograph-header">
-            <button id="contact_photographer" class="contact_button" onclick="displayModal()">Contactez-moi</button>
+            <button id="contact_photographer" class="contact_button">Contactez-moi</button>
         </div>
     </main>
     <div id="contact_modal" class="modal_window">
         <div class="modal">
-            <header>
-                <h2>Contactez-moi</h2>
-                <img src="assets/icons/close.svg" class="close_modal" onclick="closeModal()" />
+            <header class="form__header">
+                <h2 class="form__title">Contactez-moi</h2>
+                <img src="assets/icons/close.svg" class="close_modal" />
+
             </header>
-            <form>
+            <h2 class="photographer__form"></h2>
+            <form class="modal_form" aria-label="form">
                 <div>
                     <label>Nom</label>
-                    <input id="last-name" type="text" />
+                    <input id="last-name" class="text-control" type="text" aria-label="last-name" />
                 </div>
                 <div>
                     <label>Prénom</label>
-                    <input id="first-name" type="text" />
+                    <input id="first-name" class="text-control" type="text" aria-label="first-name" />
                 </div>
                 <div>
                     <label>Adresse e-mail</label>
-                    <input id="email" type="email" />
+                    <input id="email" class="text-control" type="email" aria-label="email" />
                 </div>
                 <div>
                     <label for="message">Votre message</label>
-                    <textarea name="message" id="yout-message" cols="30" rows="10"></textarea>
+                    <textarea name="message" class="text-control" id="yout-message" cols="30" rows="10" aria-label="your message"></textarea>
                 </div>
 
                 <button class="submit_button contact_button">Envoyer</button>
             </form>
+            <h2 class="valid-message">Votre message à bien été envoyé</h2>
         </div>
     </div>
     <div aria-label="filter" id="selector__section">

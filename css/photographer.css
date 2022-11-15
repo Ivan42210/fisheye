@@ -1,3 +1,13 @@
+.no-scroll {
+    overflow-y: hidden;
+}
+
+#main {
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+}
+
 #contact_modal {
     display: none;
 }
@@ -46,8 +56,21 @@
     margin: 0 auto;
 }
 
+.label-place {
+    position: absolute;
+}
+
 
 /**/
+
+.close_modal {
+    margin-left: 100px;
+}
+
+.invalid-input::after {
+    content: 'Veuillez remplir ce champs*';
+    color: black;
+}
 
 .photographer__form {
     align-self: baseline;
@@ -68,7 +91,7 @@
 .modal {
     border-radius: 5px;
     background-color: #DB8876;
-    width: 40%;
+    width: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -77,7 +100,7 @@
     margin-left: auto;
     margin-right: auto;
     margin-top: 20px;
-    max-height: 961px;
+    height: fit-content;
 }
 
 .modal header {

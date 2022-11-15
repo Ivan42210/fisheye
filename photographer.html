@@ -11,14 +11,32 @@
 </head>
 
 <body>
-    <header>
-        <img src="assets/images/logo.png" class="logo" />
-    </header>
-    <main>
-        <div class="photograph-header">
-            <button id="contact_photographer" class="contact_button">Contactez-moi</button>
+    <section id="main">
+        <header>
+            <img src="assets/images/logo.png" class="logo" />
+        </header>
+        <main>
+            <div class="photograph-header">
+                <button id="contact_photographer" class="contact_button">Contactez-moi</button>
+            </div>
+        </main>
+
+        <div aria-label="filter" id="selector__section">
+            <span>Trier par: </span>
+            <ul class="selector">
+                <li id="selected-area" class="selected__section"><input id="radio" class="selected" type="radio" name="selected-item" value="">
+                    <label for="selected-item" id="selected-label">Sélection</label><i class="fa-solid fa-angle-down close-selector"></i></li>
+                <ul id="subMenu" class="option display--none">
+                    <li><input class="selector__item" type="button" name="Popularité" id="popularity" data-value="popularity" value="Popularité"></li>
+                    <li><input class="selector__item" type="button" name="Date" id="date" data-value="date" value="Date"></li>
+                    <li><input class="selector__item" type="button" name="Titre" id="title" data-value="title" value="Titre"></li>
+                </ul>
+            </ul>
         </div>
-    </main>
+        <div class="photograph_section-pics">
+
+        </div>
+    </section>
     <div id="contact_modal" class="modal_window">
         <div class="modal">
             <header class="form__header">
@@ -28,19 +46,19 @@
             </header>
             <h2 class="photographer__form"></h2>
             <form class="modal_form" aria-label="form">
-                <div>
+                <div class="label_place">
                     <label>Nom</label>
                     <input id="last-name" class="text-control" type="text" aria-label="last-name" />
                 </div>
-                <div>
+                <div class="label_place">
                     <label>Prénom</label>
                     <input id="first-name" class="text-control" type="text" aria-label="first-name" />
                 </div>
-                <div>
+                <div class="label_place">
                     <label>Adresse e-mail</label>
                     <input id="email" class="text-control" type="email" aria-label="email" />
                 </div>
-                <div>
+                <div class="label_place">
                     <label for="message">Votre message</label>
                     <textarea name="message" class="text-control" id="yout-message" cols="30" rows="10" aria-label="your message"></textarea>
                 </div>
@@ -49,21 +67,6 @@
             </form>
             <h2 class="valid-message">Votre message à bien été envoyé</h2>
         </div>
-    </div>
-    <div aria-label="filter" id="selector__section">
-        <span>Trier par: </span>
-        <ul class="selector">
-            <li id="selected-area" class="selected__section"><input id="radio" class="selected" type="radio" name="selected-item" value="">
-                <label for="selected-item" id="selected-label">Sélection</label><i class="fa-solid fa-angle-down close-selector"></i></li>
-            <ul id="subMenu" class="option display--none">
-                <li><input class="selector__item" type="button" name="Popularité" id="popularity" data-value="popularity" value="Popularité"></li>
-                <li><input class="selector__item" type="button" name="Date" id="date" data-value="date" value="Date"></li>
-                <li><input class="selector__item" type="button" name="Titre" id="title" data-value="title" value="Titre"></li>
-            </ul>
-        </ul>
-    </div>
-    <div class="photograph_section-pics">
-
     </div>
     <section id="lightbox" class="lightbox__section">
 

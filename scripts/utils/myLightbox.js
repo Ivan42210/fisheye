@@ -37,6 +37,9 @@ function displayLightbox(idPhoto) {
     } else if (lightboxPhotoData.type === 'video') {
         const video = new Video(mediaUrl, imgContainer).makeVideo();
         video.className = 'lightbox__img';
+        video.setAttribute('controls', true);
+        video.setAttribute('autoplay', true);
+        video.setAttribute('muted', true);
         const title = new textElement('h3', lightboxPhotoData.title, imgContainer).MakeElement();
         title.className = 'lightbox__title'
     }

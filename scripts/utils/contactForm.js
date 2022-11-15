@@ -18,7 +18,7 @@ class Form {
     displayModal() {
         this.modal.style.display = 'flex'
         this.modal.setAttribute('aria-hidden', 'false')
-            //this.main.setAttribute('aria-hidden', 'true')
+        this.main.setAttribute('aria-hidden', 'true')
         document.body.classList.add('no-scroll')
         this.buttonClose.focus()
     }
@@ -26,7 +26,7 @@ class Form {
     closeModal() {
         this.modal.style.display = 'none'
         this.modal.setAttribute('aria-hidden', 'true')
-            //this.main.setAttribute('aria-hidden', 'false')
+        this.main.setAttribute('aria-hidden', 'false')
         document.body.classList.remove('no-scroll')
         this.buttonOpen.focus()
     }
@@ -69,9 +69,10 @@ class Form {
             resultChek = false
         }
         if (resultChek) {
-            testedInput.classList.remove('invalid-input')
+            testedInput.parentNode.classList.remove('invalid-input')
+
         } else {
-            testedInput.classList.add('invalid-input')
+            testedInput.parentNode.classList.add('invalid-input')
         }
         return resultChek
     }

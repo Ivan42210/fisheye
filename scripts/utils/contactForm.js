@@ -92,7 +92,7 @@ class Form {
         if (invalidInput === 0) {
             this.form.style.display = 'none'
             this.validMessage.style.display = 'flex'
-            console.log('First name: ' + this.inputFirst.value + ', Laste name: ' + this.inputLast.value + ', Email: ' + this.inputEmail.value + ', Message: ' + this.inputMessage.value + '.')
+            console.log('First name: ' + this.inputFirst.value + ', Last name: ' + this.inputLast.value + ', Email: ' + this.inputEmail.value + ', Message: ' + this.inputMessage.value + '.')
         } else {
             console.log(invalidInput + ' invalid(s) input(s)')
         }
